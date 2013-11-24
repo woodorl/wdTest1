@@ -10,6 +10,7 @@ body {
     width: 400px;
     height: 300px;
     -webkit-perspective: 450px center center;
+    -moz-perspective: 450px center center;
 }
 
 #scene {
@@ -17,6 +18,7 @@ body {
     width: 400px;
     height: 300px;
     -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
 }
 
 #floor {
@@ -25,14 +27,20 @@ body {
     height: 200px;
     background-image: -webkit-radial-gradient(center, circle closest-corner, #93FF05 0%, #62DB11 100%);
     -webkit-transform: translate(0px, 200px) rotateX(90deg);
+
+    background-image: -moz-radial-gradient(center, circle closest-corner, #93FF05 0%, #62DB11 100%);
+    -moz-transform: translate(0px, 200px) rotateX(90deg);
 }
 
 #back {
     position: absolute;
     width: 400px;
     height: 200px;
-    -webkit-transform: translate3d(0px, 100px, -100px);
     background-image: -webkit-linear-gradient(top, #004FED 0%, #2F99EB 50%, #3CD7EF 100%);
+    -webkit-transform: translate3d(0px, 100px, -100px);
+
+    background-image: -moz-linear-gradient(top, #004FED 0%, #2F99EB 50%, #3CD7EF 100%);
+    -moz-transform: translate3d(0px, 100px, -100px);
 }
 
 #cloud1 {
@@ -44,6 +52,11 @@ body {
     -webkit-mask-image: url(../images/cloud.png);
     -webkit-mask-size: 100px 100px;
     -webkit-animation: cloud1 6s infinite linear;
+
+    -moz-mask-size: 100px 100px;
+    -moz-mask-image: url(../images/cloud.png);
+    -moz-transform: translate3d(0px, 100px, -80px);
+    -moz-animation: cloud1 6s infinite linear;
 }
 
 #cloud2 {
@@ -55,6 +68,11 @@ body {
     -webkit-mask-image: url(../images/cloud.png);
     -webkit-mask-size: 60px 60px;
     -webkit-animation: cloud2 8s infinite linear;
+
+    -moz-transform: translate3d(0px, 100px, -80px);
+    -moz-mask-image: url(../images/cloud.png);
+    -moz-mask-size: 60px 60px;
+    -moz-animation: cloud2 8s infinite linear;
 }
 
 #chr {
@@ -66,6 +84,11 @@ body {
     -webkit-mask-size: 100px 100px;
     -webkit-transform: translate(0px, 200px);
     -webkit-animation: anim 3s infinite ease-out;
+
+    -moz-mask-image: url(../images/chr.png);
+    -moz-mask-size: 100px 100px;
+    -moz-transform: translate(0px, 200px);
+    -moz-animation: anim 3s infinite ease-out;
 }
 
 @-webkit-keyframes anim {
@@ -89,4 +112,28 @@ body {
     10% {opacity: 0.8;}
     90% {opacity: 0.8;}
     100% {-webkit-transform: translate(400px, 140px); opacity: 0;}
+}
+
+
+@-moz-keyframes anim {
+    0% {-moz-transform:translate3d(0px, 200px, 50px) rotateZ(0deg); background: red;}
+    15% {-moz-transform:translate3d(50px, 200px, 50px) rotateZ(20deg); background: orange;}
+    30% {-moz-transform:translate3d(100px, 150px, 50px) rotateZ(-30deg);background: white;}
+    35% {-moz-transform:translate3d(200px, 200px, 50px) rotateZ(40deg);background: red;}
+    70% {-moz-transform:translate3d(220px, 200px, 50px);background: black;}
+    100% {-moz-transform:translate3d(0px, 200px, 50px); background: red;}
+}
+
+@-moz-keyframes cloud1 {
+    0% {-moz-transform: translate(-50px, 100px); opacity: 0;}
+    10% {opacity: 0.8;}
+    90% {opacity: 0.8;}
+    100% {-moz-transform: translate(400px, 100px); opacity: 0;}
+}
+
+@-moz-keyframes cloud2 {
+    0% {-moz-transform: translate(-50px, 140px); opacity: 0;}
+    10% {opacity: 0.8;}
+    90% {opacity: 0.8;}
+    100% {-moz-transform: translate(400px, 140px); opacity: 0;}
 }
